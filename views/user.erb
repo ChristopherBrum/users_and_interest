@@ -1,0 +1,25 @@
+<h2>Selected User: <%= find_user_name %></h2>
+
+<ul>
+  <% find_user.each do |user| %>
+    <li>
+      <strong>Name:</strong> <%= find_user_name %>
+    </li>
+    <li>
+      <strong>Email:</strong> <%= user.last[:email] %>
+    </li>
+    <li>
+      <strong>Interests:</strong> <%= user.last[:interests].join(", ") %>
+    </li>
+  <% end %>
+</ul>
+
+<h4>Other Users</h4>
+
+<ul>
+  <% find_other_users.each do |user, info| %>
+    <li>
+      <a href="/users/<%= update_param_id(info) %>"><%= user.capitalize %></a>
+    </li>
+  <% end %>
+</ul>

@@ -1,0 +1,11 @@
+<h2>All Users</h2>
+
+<ul>
+  <% @users.each do |user| %>
+    <li>
+      <% assign_param_id(user) %>
+      <a href="users/<%= params[:id] %>"><%= user.first.capitalize %></a>
+    </li>
+  <% end %>
+</ul>
+
